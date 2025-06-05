@@ -1,0 +1,159 @@
+# Default values for all-in-one.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+global:
+  config_map_env: lumin-configmap
+  image:
+    registry: fosforpoccontainerregistry.azurecr.io
+
+analytics-configms:
+  analytics_config_ms:
+    image:
+      repo: analytics-configms
+      tag: 5.0.8
+analytics-forecasting:
+  analytics_forecasting:
+    image:
+      repo: analytics-forecasting
+      tag: 5.0.8
+analytics-jobs:
+  tech_jobs:
+    image:
+      repo: analytics-jobs
+      tag: 5.0.8
+analytics-query-processor:
+  analytics_query_processor:
+    image:
+     repo: analytics-query-processor
+     tag: 2025-03-20-09-31-41
+analytics-experimental:
+  #acr_registry_name: crluminregistry
+  analytics_experimental:
+    image:
+     repo: analytics-experimental
+     tag: 2025-03-19-09-46-52
+auto-query:
+  auto_query:
+    image:
+      repo: auto-query
+      tag: 5.0.8
+cache:
+  tech_cache:
+    image:
+      repo: cache
+      tag: 5.0.8
+configms:
+  nlp_config_ms:
+    image:
+      repo: configms
+      tag: 5.0.8
+data-ingestion:
+  tech_data_ingestion:
+    image:
+      repo: data-ingestion
+      tag: 2024-11-21-14-55-17
+epoch:
+  tech_epoch:
+    image:
+      repo: epoch
+      tag: 2024-11-20-10-37-27
+fast-api:
+  analytics_ask_leni:
+    image:
+      repo: fast-api
+      tag: 2025-05-26-11-27-36
+file-conversion:
+  file_conversion:
+    image:
+      repo: file-conversion
+      tag: 5.0.8
+lenims:
+  tech_ask_leni:
+    image:
+      repo: lenims
+      tag: 5.0.8
+lxai:
+  lxai:
+    image:
+      repo: lxai
+      tag: 2025-05-07-12-57-22
+narratives:
+  narratives:
+    image:
+      repo: narratives
+      tag: 2025-04-09-05-26-12
+nlg-config:
+  nlg_config:
+    image:
+      repo: nlg-config
+      tag: 2025-05-26-11-27-36
+nlp-utility:
+  nlp_utility:
+    image:
+      repo: nlp-utility
+      tag: 5.0.8
+ontology:
+  nlp_ontology:
+    image:
+      repo: ontology
+      tag: 5.0.8
+question-generation:
+  nlp_question_generation:
+    image:
+      repo: question-generation
+      tag: 5.0.8
+react-leniui:
+  tech_react_leniui:
+    image:
+      repo: react-leniui
+      tag: 2025-06-03-11-19-38
+self-serve:
+  nlp_ask_leni:
+    image:
+      repo: self-serve
+      tag: 2025-05-05-09-49-19
+signals-alerts:
+  tech_signals_alerts:
+    image:
+      repo: signals-alerts
+      tag: 5.0.8
+sse:
+  tech_sse:
+    image:
+      repo: sse
+      tag: 5.0.8
+sutime:
+  nlp_sutime:
+    image:
+      repo: sutime
+      tag: 5.0.8
+tech-entry:
+  tech_entry:
+    image:
+      repo: tech-entry
+      tag: 5.0.8
+tech-leni-admin-be:
+  tech_leni_admin_be:
+    image:
+      repo: tech-leni-admin-be
+      tag: 5.0.8
+tech-leni-admin-ui:
+  tech_leni_admin_ui:
+    image:
+      repo: tech-leni-admin-ui
+      tag: 5.0.8
+tech-nudges:
+  tech_nudges:
+    image:
+      repo: tech-nudges
+      tag: 5.0.8
+tech-utility:
+  tech_utility:
+    image:
+      repo: tech-utility
+      tag: 5.0.8
+tech-workspace:
+  tech_workspace:
+    image:
+      repo: tech-workspace
+      tag: 5.0.8
