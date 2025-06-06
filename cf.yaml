@@ -1,0 +1,26 @@
+airflowconfigmap:
+  name: airflow-configmap
+sparkconfigmap: 
+  name: live-ha-configmap
+msconfigmap:
+  name: lumin-configmap
+storageaccountname: "containercokefosforpoc"
+storageaccountstring: "DefaultEndpointsProtocol=https;AccountName=cokefosforpoc;AccountKey=sGKTISARI94ZhoYcmUXCiz5xhpo0ogJe0AR5RmMWWHxAbqaV1y6TFGKaPbSSjINRSFf0ene/makw+AStuSR2Vg==;EndpointSuffix=core.windows.net;SharedAccessToken=sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2026-02-20T22:38:05Z&st=2025-02-20T14:38:05Z&spr=https,http&sig=KEXLKlhknL5zb11O2Ffkib70uxwWmD5AbnalRekUeBI%3D;fs_az_tenant_id=02aa9fc1-18bc-4798-a020-e01c854dd434"
+clusterapi: "k8s://fosforpocaks3-dns-a0d2y2fa.hcp.eastus.azmk8s.io"
+fuseki:
+  username: "fuseki_ontology_leni_user"
+  password: "lEniFuSekiuSer@2022"
+dremio:
+  username: Leni
+  password: QSC8Mb$V
+  url: "https://azure-dremio.leni.ai"
+airflow:
+  username: "airflow"
+  password: "Ev$rtyWerNgahdt$ert"
+  kda: "fosforpoccontainerregistry.azurecr.io/lumin-pyspark-kda:2023-12-29-06-10-10"
+  nudges: "fosforpoccontainerregistry.azurecr.io/lumin-pyspark-nudge:2025-04-29-04-47-02"
+luminui:
+  name: "https://azure-lumin.leni.ai"
+luminadmin:
+  name: https://lumin-admin-dev.lti-aiq.in
+
