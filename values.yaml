@@ -5,7 +5,7 @@ sparkconfigmap:
 msconfigmap:
   name: lumin-configmap
 storageaccountname: "containercokefosfornewpoc"
-storageaccountstring: "DefaultEndpointsProtocol=https;AccountName=cokefosfornewpoc;AccountKey=KIUbu+mYyILAAMh973CFFv1KN0ZQwxRsbbkmDIC4xUGRq1SkpIPA8+x9JnFRr2cNBAVvIkP3v2ae+AStN3PC3w==;EndpointSuffix=core.windows.net;SharedAccessToken=sv=2024-11-04&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2029-06-06T11:17:33Z&st=2025-06-06T03:17:33Z&spr=https,http&sig=m0fCDEZDwE7bONTx4dkcz8ZX3lLVRt%2FPGfAjSO%2BL298%3D;fs_az_tenant_id=02aa9fc1-18bc-4798-a020-e01c854dd434"
+storageaccountstring: "DefaultEndpointsProtocol=https;AccountName=cokefosforpoc;AccountKey=sGKTISARI94ZhoYcmUXCiz5xhpo0ogJe0AR5RmMWWHxAbqaV1y6TFGKaPbSSjINRSFf0ene/makw+AStuSR2Vg==;EndpointSuffix=core.windows.net;SharedAccessToken=sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2026-02-20T22:38:05Z&st=2025-02-20T14:38:05Z&spr=https,http&sig=KEXLKlhknL5zb11O2Ffkib70uxwWmD5AbnalRekUeBI%3D;fs_az_tenant_id=02aa9fc1-18bc-4798-a020-e01c854dd434"
 clusterapi: "k8s://fosforpocaks3-dns-a0d2y2fa.hcp.eastus.azmk8s.io"
 fuseki:
   username: "fuseki_ontology_leni_user"
