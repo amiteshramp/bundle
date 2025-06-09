@@ -1,0 +1,11 @@
+kubectl delete -f jaeger-operator.yaml -n observability
+kubectl delete -f jaeger-cluster.yaml -n observability
+
+kubectl apply -f jaeger-operator.yaml -n observability
+kubectl apply -f jaeger-cluster.yaml
+
+Changing the namespace in the "jaeger-cluster.yaml"(two places)
+
+lumin-jaeger-dev.lti-aiq.in
+admin
+admin

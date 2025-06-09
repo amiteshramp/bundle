@@ -1,0 +1,35 @@
+apiVersion: jaegertracing.io/v1
+kind: Jaeger
+metadata:
+  name: jaeger
+  namespace: default
+spec:
+  strategy: production
+  ingress:
+    enabled: false
+  agent:
+    image: fosforpoccontainerregistry.azurecr.io/lumin-jaeger:jaeger-agent-1.62.0
+  collector:
+    image: fosforpoccontainerregistry.azurecr.io/lumin-jaeger:jaeger-collector-1.62.0 
+    maxReplicas: 1
+    resources:
+      limits:
+        cpu: 500m
+        memory: 500Mi
+  query:
+    image: fosforpoccontainerregistry.azurecr.io/lumin-jaeger:jaeger-query-1.62.0
+    options:
+      query:
+        base-path: /jaeger
+  storage:
+    type: elasticsearch
+    options:
+      es:
+        server-urls: http://elasticsearch-master.default.svc.cluster.local:9200
+    dependencies:
+      image: fosforpoccontainerregistry.azurecr.io/lumin-jaeger:spark-dependencies-latest     
+    esIndexCleaner:
+      enabled: true
+      numberOfDays: 7
+      schedule: "55 23 * * *"
+      image: fosforpoccontainerregistry.azurecr.io/lumin-jaeger:jaeger-es-index-cleaner-1.62.0      
