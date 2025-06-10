@@ -1,0 +1,47 @@
+---------------------------------------------------------
+in GB unless specified(Request memory increased to reduce the node count)
+---------------------------------------------------------
+tech-nudges-hpa(4 to 8)
+tech-jobs-hpa(4 to 8)
+*tech-epoch-hpa(1 to 3) <reduced replica from 10 to 1 after mem_changed_from_2to3>
+tech-entry-hpa(4 to 8)
+tech-data-ingestion-hpa(4 to 8)
+tech-ask-leni-hpa(3 to 12)
+tech-signal-alerts-hpa(4 to 12)
+analytics-config-ms-hpa(700Mi to 1400Mi)
+analytics-experimental-ms-hpa(2 to 4)
+tech-cache-hpa(50Mi to 500Mi)
+narratives-hpa(1 to 4)
+*nlp-ask-leni-hpa(Changed to below)
+          requests:
+            cpu: "2"
+            *memory: 8Gi  <reduced replica from 2 to 1 after mem_changed_from_6to8>
+-----------------START---FIRST--TIME-------------------------------------
+*analytics-forecasting-hpa(1 to 2) <reduced replica from 4 to 1>
+*tech-leni-admin-be-hpa(450Mi to 1GB) <reduced replica from 5 to 1>
+*analytics-common-ms-hpa(4 to 5) <reduced replica from 2 to 1>
+-----------------END---FIRST--TIME-------------------------------------
+
+
+----------------------
+Changes as per Mari
+----------------------
+tech data ingestion
+-----------------------
+Make 6 GiB (memory requests) -- 
+	On 19 August --> Reverted to 8 GB (as it was earlier)- 
+min replica make it 2 
+-------------------------
+tech epoch
+Make 5 GiB (memory requests)
+
+19 August Changes:
+	tech data ingestion: Changed  min and max to 5 from ( min=2 & max=10)
+	tech-epoch-hpa:      Changed  min and max to 5 from ( min=1 & max=10)
+
+-----20August 2024--------------
+tech data ingestion: cpu req (not change) --  cpu (limit=12) --- replica 4 (min and max both)
+
+------30 Aug---
+analytics-experimental-m
+limit memory increased from 4 GB to 8 GB
