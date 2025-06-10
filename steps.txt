@@ -1,0 +1,41 @@
+1) The pfx file we got from customer.
+ Using that we extrated key and certificate file.
+
+openssl pkcs12 -in lumin-poc.cocacola.com-chain-2025-06-09.pfx -nocerts -out keyfile-encrypted.key
+	When it asks "Enter Import Password:" --> Check the ticket raised and what was the password mentioned there. (pAssword123)
+	Whrn it asks "Enter PEM pass phrase:" --> Enter same password.
+openssl rsa -in keyfile-encrypted.key -out keyfile-decrypted.key
+openssl pkcs12 -in lumin-poc.cocacola.com-chain-2025-06-09.pfx -clcerts -nokeys -out certificate.crt
+
+2) Validate the key and certificate file.
+
+3) Create the secret. (Use decrypted.key)
+
+kubectl delete secret airflow-ui-secret -n airflow 
+kubectl create secret tls airflow-ui-secret -n airflow --key key.key --cert crt.crt
+
+kubectl delete secret monitoring-ui-secret -n monitoring 
+kubectl create secret tls monitoring-ui-secret -n monitoring --key key.key --cert crt.crt
+
+kubectl delete secret lumin-ui-secret -n default 
+kubectl create secret tls lumin-ui-secret -n default --key key.key --cert crt.crt
+
+kubectl delete secret dremio-ui-secret -n default 
+kubectl create secret tls dremio-ui-secret -n default --key key.key --cert crt.crt
+
+kubectl delete secret fuseki-ui-secret -n default 
+kubectl create secret tls fuseki-ui-secret -n default --key key.key --cert crt.crt
+
+kubectl delete secret jaeger-ui-secret -n default 
+kubectl create secret tls jaeger-ui-secret -n default --key key.key --cert crt.crt
+
+kubectl delete secret kibana-ui-secret -n default 
+kubectl create secret tls kibana-ui-secret -n default --key key.key --cert crt.crt
+
+kubectl delete secret jaeger-operator-service-cert -n observability 
+kubectl create secret tls jaeger-operator-service-cert -n observability --key key.key --cert crt.crt
+
+
+4) Test it.
+
+
